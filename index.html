@@ -285,6 +285,27 @@ figure{margin:0}
   .cmp-figs,.cmp-figs.two{grid-template-columns:1fr 1fr}
   .cmp-base ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
 }
+.buyers{margin:34px 0 6px;border:1px solid #E2D2C0;background:#FDFAF6;padding:24px 26px 22px}
+.buyers .bhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid #C9B49A;padding-bottom:12px;margin-bottom:18px}
+.buyers h3{margin:0;font-size:clamp(19px,2.1vw,24px);font-weight:800;letter-spacing:-.01em;color:#3A2B20}
+.buyers h3 em{display:block;font-size:11.5px;font-style:normal;letter-spacing:.18em;color:var(--accent);font-weight:600;margin-bottom:6px}
+.buyers .navlink{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--accent);border:1px solid #E3CBB9;background:#F9F0E7;padding:8px 14px;border-radius:99px;text-decoration:none;font-weight:600}
+.buyers .navlink:hover{background:#F3E2D4}
+.buyers .bsub{margin:0 0 14px;font-size:13.5px;color:#7A6A5A;line-height:1.8}
+.bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.bcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid #EADCCC;border-left:4px solid var(--accent);padding:12px 14px}
+.bcard .av{width:44px;height:44px;border-radius:50%;background:#3A2B20;color:#F6EFE6;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none}
+.bcard .who{font-size:15px;font-weight:800;color:#3A2B20;line-height:1.35}
+.bcard .who i{font-style:normal;font-size:12px;font-weight:600;color:#9A8A78;margin-left:6px}
+.bcard .scope{font-size:12.8px;color:#7A6A5A;line-height:1.7;margin-top:3px}
+.bcard .wx{font-size:12.5px;color:var(--accent);background:#FBF1E8;border:1px dashed #E3CBB9;padding:4px 9px;border-radius:6px;white-space:nowrap;font-weight:600}
+
+@media(max-width:820px){.bgrid{grid-template-columns:1fr}.bcard{grid-template-columns:38px 1fr}.bcard .wx{grid-column:2;justify-self:start}}
+.bonus{margin:18px 0 0;border:1px solid #EBC3A9;border-left:6px solid #B5401F;background:#FBEBE1;padding:16px 20px}
+.bonus .bt{font-size:15.5px;font-weight:800;color:#8C2F1B;margin-bottom:6px;letter-spacing:.02em}
+.bonus p{margin:0;font-size:14.4px;color:#7A3A20;line-height:1.85}
+.bonus b{color:#A02C12;font-weight:800}
+.bonus .wxc{display:inline-block;background:#fff;border:1px solid #EBC3A9;border-radius:6px;padding:1px 8px;margin:0 2px;font-weight:800;color:#8C2F1B}
 </style>
 </head>
 
@@ -310,6 +331,7 @@ figure{margin:0}
     <div class="brand"><i></i>亚麻长裤改款指南</div>
     <nav class="nav">
       <a href="#cate">类目</a>
+      <a href="#buyers">对接</a>
       <a href="#s1">腰部</a>
       <a href="#s2">面料</a>
       <a href="#s3">裤脚</a>
@@ -361,6 +383,22 @@ figure{margin:0}
     <div class="cate-r">
       <div class="cate-warn"><b>成分合规提醒</b><strong>实际面料是什么成分的，就必须要填什么成分；面料成分不含亚麻的一定不要写亚麻。最近稽查很多。</strong></div>
       <p class="fine">仿亚麻面料也是可以上本类目的。</p>
+    </div>
+  </section>
+
+  <section class="buyers" id="buyers">
+    <div class="bhead">
+      <h3><em>TROUSER BUYERS · 对接方式</em>东岱组长裤买手 · 对接指引</h3>
+      <a class="navlink" href="https://pangdalong-afk.github.io/along/dongdaizuleimu.html" target="_blank" rel="noopener">男士长裤类目导航 ↗</a>
+    </div>
+    <p class="bsub">开款前先对上买手：按你自己的款式方向找到对应买手，再谈款、报样、核价，避免绕路。下面是男士长裤类目各位买手的负责范围与对接微信。</p>
+    <div class="bgrid">
+      <div class="bcard"><span class="av">东</span><div><div class="who">东岱 <i>huw.dong</i></div><div class="scope">设计版 / 面料款 / 伐木工 / 溯溪长裤（兜底全部休闲裤）</div></div><span class="wx">18559101016</span></div>
+      <div class="bcard"><span class="av">依</span><div><div class="who">依江月 <i>dumia.yang</i></div><div class="scope">哈伦裤、裙裤、灯笼裤 / 束脚各类休闲裤</div></div><span class="wx">Withx_yjy</span></div>
+      <div class="bcard"><span class="av">胖</span><div><div class="who">胖达龙 <i>lucian.tan</i></div><div class="scope">度假仿棉麻 / 亚麻长裤；针织（非卫裤）/ 梭织运动长裤 / 冰丝裤 / 超声波裤</div></div><span class="wx">duoduo_pangdalong</span></div>
+      <div class="bcard"><span class="av">万</span><div><div class="who">万仞山 <i>hazel.shao</i></div><div class="scope">商务休闲长裤 / chino 长裤 / 背带裤 / 高尔夫长裤</div></div><span class="wx">temu_wanrenshan</span></div>
+      <div class="bcard"><span class="av">伍</span><div><div class="who">伍舒宁 <i>sienna.wu</i></div><div class="scope">大码男士休闲裤</div></div><span class="wx">15602993307</span></div>
+      <div class="bcard"><span class="av">宫</span><div><div class="who">宫鼎猹 <i>sienna.yu</i></div><div class="scope">东岱组跟单</div></div><span class="wx">东岱组跟单</span></div>
     </div>
   </section>
 
@@ -427,7 +465,7 @@ figure{margin:0}
   </section>
   <section class="section" id="s2">
     <div class="sec-head"><span class="sec-num">02</span><h2>面料改款</h2><span class="badge">换布为主</span></div>
-    <p class="sec-desc">同为亚麻，竹节、条纹组织、斜纹、大方格、细密颗粒带来的视觉厚度与肌理完全不同，是「看起来不一样」的关键。这一章只看面料：前三种附「成衣 + 布面特写」，先看上身效果，再看肌理。</p>
+    <p class="sec-desc">同为亚麻，竹节、条纹组织、斜纹、大方格、细密颗粒带来的视觉厚度与肌理完全不同，是「看起来不一样」的关键。这一章只看面料：前三种附「成衣 + 布面特写」，先看上身效果，再看肌理；后两种直接看布面肌理。</p>
     <div class="cmp">
       <aside class="cmp-base">
         <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
@@ -464,7 +502,7 @@ figure{margin:0}
           </div>
         </article>
         <article class="cmp-row">
-          <div class="cmp-figs"><div class="ph" data-cap="大方格亚麻肌理 · 成衣"><img src="img/image11.jpg" alt="大方格亚麻肌理 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div></div>
+          <div class="cmp-figs"><div class="ph" data-cap="大方格亚麻肌理 · 面料特写"><img src="img/image11.jpg" alt="大方格亚麻肌理 · 面料特写" loading="lazy"><span class="pill">特写</span><span class="mag">＋</span></div></div>
           <div class="cmp-txt">
             <div class="cmp-n">改款 ④</div>
             <h3>大方格亚麻肌理 <em>远看有格 / 织造肌理</em></h3>
@@ -473,7 +511,7 @@ figure{margin:0}
           </div>
         </article>
         <article class="cmp-row">
-          <div class="cmp-figs"><div class="ph" data-cap="细密颗粒亚麻 · 成衣"><img src="img/image12.jpg" alt="细密颗粒亚麻 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div></div>
+          <div class="cmp-figs"><div class="ph" data-cap="细密颗粒亚麻 · 面料特写"><img src="img/image12.jpg" alt="细密颗粒亚麻 · 面料特写" loading="lazy"><span class="pill">特写</span><span class="mag">＋</span></div></div>
           <div class="cmp-txt">
             <div class="cmp-n">改款 ⑤</div>
             <h3>细密颗粒亚麻肌理 <em>细密均匀 / 布面平整</em></h3>
@@ -805,7 +843,11 @@ figure{margin:0}
       <div class="card"><div class="ph" data-cap="开款参考 35 / 36"><img src="img/image91.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
       <div class="card"><div class="ph" data-cap="开款参考 36 / 36"><img src="img/image92.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
     </div>
-    <div class="callout"><span class="dot"></span><span>用法：先按版型挑出 3–5 个骨架款，再把前面几章的腰型、脚口、辅料、设计套上去组合，一般能拆出十几条不撞款的产品线。</span></div>
+    <div class="callout"><span class="dot"></span><span>用法：先按版型挑出 3–5 个骨架款，再把前面几章的腰型、脚口、辅料、设计套上去组合，一般能拆出十几条不撞款的产品线。</span></div>    <div class="callout"><span class="dot"></span><span>用法：先按版型挑出 3–5 个骨架款，再把前面几章的腰型、脚口、辅料、设计套上去组合，一般能拆出十几条不撞款的产品线。</span></div>
+    <div class="bonus">
+      <div class="bt">开款奖励 · 同款可开请联系胖达龙</div>
+      <p>各位商家如果能开出同款，请联系<b>胖达龙（lucian.tan）</b>，微信：<span class="wxc">duoduo_pangdalong</span>，可获得<b>额外加权流量 + 核价沟通优势</b>。</p>
+    </div>
   </section>
 
 </div>

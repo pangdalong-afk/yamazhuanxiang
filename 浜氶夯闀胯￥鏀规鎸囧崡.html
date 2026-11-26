@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亚麻长裤改款指南</title>
+<style>
+:root{
+  --paper:#F6F2EA; --card:#FFFCF5; --ink:#241F1B; --ink2:#4B443C; --muted:#7A7168;
+  --line:#E6DCCB; --line2:#D9CBB6; --accent:#A65A3C; --accent2:#D8A78A; --sand:#EFE8DC;
+  --warnbg:#FBF0E2; --warnline:#E2B98F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);line-height:1.65;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.55;
+  background-image:repeating-linear-gradient(0deg,rgba(120,95,60,.05) 0 1px,transparent 1px 4px),
+                   repeating-linear-gradient(90deg,rgba(120,95,60,.045) 0 1px,transparent 1px 4px);
+  mix-blend-mode:multiply;
+}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,serif}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(246,242,234,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar .inner{max-width:1180px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:18px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+.brand i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block}
+.nav{display:flex;gap:2px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 10px;border-radius:99px;transition:.2s}
+.nav a:hover{background:#EDE5D6;color:var(--ink)}
+.nav a.disc{color:var(--accent);border:1px solid #E3CBB9;margin-left:4px}
+.nav a.disc:hover{background:#F7EDE4;color:var(--accent)}
+
+/* ---------- notice strip ---------- */
+.notice{position:relative;z-index:3;background:#241F1B;color:#D9CFC0;font-size:12.5px;letter-spacing:.02em}
+.notice .inner{max-width:1180px;margin:0 auto;padding:8px 24px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.notice b{color:#E8C3A6;font-weight:600}
+.notice a{color:#E8C3A6;text-underline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center;padding:58px 0 40px;position:relative;z-index:2}
+.eyebrow{font-size:11.5px;letter-spacing:.26em;color:var(--accent);text-transform:uppercase}
+h1{line-height:1.22;font-family:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,serif;font-size:clamp(30px,4.3vw,52px);margin:16px 0 20px;font-weight:600;letter-spacing:-.015em}
+h1 .thin{color:var(--muted);font-weight:400}
+.lead{color:var(--ink2);font-size:15.5px;max-width:36em;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:12.5px;color:#5E564D;background:var(--card);border:1px solid var(--line);padding:6px 13px;border-radius:99px}
+.hint{margin-top:20px;font-size:12.5px;color:#8B8177;display:flex;align-items:center;gap:8px}
+.hint svg{flex:none}
+.frame{background:var(--card);border:1px solid var(--line);padding:10px;box-shadow:0 20px 44px -26px rgba(70,50,30,.45)}
+.hero-fig{position:relative}
+.hero-fig .tagline{position:absolute;left:-1px;bottom:-1px;background:var(--ink);color:#F3EADA;font-size:11.5px;letter-spacing:.14em;padding:7px 13px;z-index:2}
+
+/* ---------- category band ---------- */
+.cate{position:relative;z-index:2;margin:6px 0 4px;background:#FBF6EC;border:1px solid var(--line2);border-left:4px solid var(--accent);display:grid;grid-template-columns:1.15fr .85fr;gap:0}
+.cate>div{padding:22px 26px}
+.cate-k{font-size:11.5px;letter-spacing:.22em;color:var(--accent);margin-bottom:10px}
+.cate p{margin:0 0 8px;font-size:14px;color:var(--ink2)}
+.cate-path{font-size:14.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);padding:11px 14px;line-height:1.75}
+.cate-path i{font-style:normal;color:#B4A48E;padding:0 4px}
+.cate-r{border-left:1px dashed var(--line2);background:#F7EFE3}
+.cate-warn{font-size:13.5px;color:#7A3F26;line-height:1.8}
+.cate-warn b{display:block;font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.cate-r .fine{margin:10px 0 0;font-size:12.5px;color:#8B7A66}
+
+/* ---------- toc ---------- */
+.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:26px 0 26px;position:relative;z-index:2}
+.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:13px 15px;transition:.22s}
+.toc a:hover{border-color:var(--line2);transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(70,50,30,.4)}
+.toc span{display:block;font-family:Georgia,serif;font-size:11.5px;letter-spacing:.18em;color:var(--accent);margin-bottom:5px}
+.toc b{font-size:14px;font-weight:600}
+
+/* ---------- sections ---------- */
+.section{padding:50px 0 6px;border-top:1px solid var(--line);margin-top:30px;position:relative;z-index:2}
+.sec-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:2px solid #C9B49A;margin-bottom:4px}
+.sec-num{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:46px;padding:0 8px;
+  background:var(--ink);color:#F6EEE1;font-family:Georgia,serif;font-size:16px;letter-spacing:.06em;flex:none}
+.sec-head h2{font-size:clamp(26px,3.3vw,38px);margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.sec-head .badge{font-size:12px;color:var(--accent);border:1px solid #E3CBB9;background:#F9F0E7;padding:3px 10px;border-radius:99px}
+.sec-desc{color:var(--muted);font-size:14px;margin:10px 0 26px;max-width:54em}
+.subhead{font-size:12px;letter-spacing:.2em;color:#8B8177;margin:32px 0 14px;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.subhead::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* 二级标题：深色条 + 大号衬线字 */
+.sub2{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#2E2825;color:#F6EEE1;
+  padding:13px 20px 13px 15px;border-left:7px solid var(--accent);margin:44px 0 18px}
+.sub2 .s2n{font-family:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC",Georgia,serif;font-size:22px;
+  color:#E2A180;line-height:1;flex:none;padding-right:2px}
+.sub2 .s2t{font-family:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC",Georgia,serif;
+  font-size:clamp(19px,2.2vw,24px);font-weight:600;letter-spacing:.02em;line-height:1.3;flex:none}
+.sub2 .s2d{font-size:12.5px;color:#B9AC9C;letter-spacing:.02em;border-left:1px solid rgba(246,238,225,.24);padding-left:14px;flex:1;min-width:0}
+/* 三级标题：菱形符号 + 中等字号 + 底细线 */
+.sub3{display:flex;align-items:center;gap:11px;margin:30px 0 14px;padding-bottom:9px;border-bottom:1px solid #E0D3BE}
+.sub3 i{width:10px;height:10px;background:var(--accent);flex:none;transform:rotate(45deg);display:block}
+.sub3 b{font-size:17px;font-weight:700;letter-spacing:.02em;color:var(--ink);flex:none}
+.sub3 em{font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+/* 二级标题下的内容带左侧竖线，视觉上归属清晰 */
+.sub2+.sub3,.sub2+*{position:relative}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(248px,100%),1fr));gap:22px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);padding:9px;transition:.26s}
+.card:hover{border-color:var(--line2);box-shadow:0 12px 30px -18px rgba(70,50,30,.5);transform:translateY(-2px)}
+.ph{position:relative;overflow:hidden;background:var(--sand);display:block;cursor:zoom-in;aspect-ratio:4/5}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.ph:hover img{transform:scale(1.035)}
+.ph.fit img{object-fit:contain;background:var(--sand)}
+.ph .pill{position:absolute;left:8px;top:8px;font-size:11px;letter-spacing:.1em;background:rgba(36,31,27,.62);color:#F6EEE1;padding:3px 9px;border-radius:99px;backdrop-filter:blur(4px)}
+.mag{position:absolute;right:9px;bottom:9px;width:30px;height:30px;border-radius:50%;background:rgba(36,31,27,.62);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(4px);transition:.25s;pointer-events:none;backdrop-filter:blur(4px);z-index:2}
+.ph:hover .mag{opacity:1;transform:none}
+figcaption{display:flex;align-items:baseline;gap:8px;padding:11px 4px 4px;font-size:14.5px;font-weight:600;letter-spacing:.005em;flex-wrap:wrap}
+figcaption em{font-style:normal;font-size:11.5px;font-weight:400;color:#9A9086;letter-spacing:.06em}
+figure{margin:0}
+
+/* ---------- fabric rows (look + detail pairs) ---------- */
+.mats{display:grid;gap:14px}
+.mat{display:grid;grid-template-columns:auto minmax(200px,1fr);gap:26px;align-items:center;background:var(--card);border:1px solid var(--line);padding:12px;transition:.26s}
+.mat:hover{border-color:var(--line2);box-shadow:0 12px 30px -18px rgba(70,50,30,.45)}
+.mat-imgs{display:grid;grid-template-columns:250px 250px;gap:10px}
+.mat.single .mat-imgs{grid-template-columns:250px}
+.mat-info .mi-k{font-family:Georgia,serif;font-size:11.5px;letter-spacing:.18em;color:var(--accent)}
+.mat-info b{display:block;font-size:18px;font-weight:600;margin:7px 0 9px;letter-spacing:-.005em}
+.mat-info p{margin:0;font-size:13.8px;color:var(--ink2);max-width:34em}
+.mat-info .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.mat-info .tags span{font-size:11.5px;color:#6B6258;border:1px solid var(--line);background:#FBF6EC;padding:4px 10px;border-radius:99px}
+
+/* ---------- warn ---------- */
+.warn{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:var(--warnbg);border:1px solid var(--warnline);border-left:5px solid var(--accent);padding:16px 20px;margin:26px 0 4px}
+.warn .wicon{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;flex:none;margin-top:2px}
+.warn .wt{font-size:15.5px;font-weight:800;color:#8C2F1B;margin-bottom:6px;letter-spacing:.02em}
+.warn p{margin:0;font-size:14.6px;font-weight:700;color:#7A3A20;line-height:1.85}
+.warn.hot{background:#FBEBE1;border:1px solid #EBC3A9;border-left:6px solid #B5401F}
+.hot{color:#A02C12;font-weight:800}
+.cate-warn strong{font-weight:800;color:#A02C12}
+.cmp-alert{margin:10px 0 0;font-size:13.6px;font-weight:700;color:#A02C12;background:#FBEBE1;border-left:3px solid #B5401F;padding:7px 12px;line-height:1.7}
+
+/* ---------- feature ---------- */
+.feature{display:grid;grid-template-columns:390px minmax(0,1fr);gap:30px;align-items:center;background:var(--card);border:1px solid var(--line);padding:14px;margin-top:24px;max-width:900px}
+.feature .body{padding:8px 14px 8px 4px}
+.kicker{font-size:11.5px;letter-spacing:.22em;color:var(--accent)}
+.feature h3{font-size:clamp(18px,1.9vw,21px);margin:10px 0 12px;font-weight:600}
+.feature p{color:var(--ink2);font-size:14.5px;margin:0}
+.feature ul{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.feature li{font-size:12.5px;color:#5E564D;border:1px solid var(--line);background:#FBF6EC;padding:5px 11px;border-radius:99px}
+
+/* ---------- callout ---------- */
+.callout{display:flex;gap:14px;align-items:center;background:#F9F0E7;border:1px solid #EBD9C8;padding:14px 18px;margin:24px 0 0;font-size:14px;color:#5B4436}
+.callout b{color:var(--accent);font-weight:600}
+.callout .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+
+/* ---------- special chapter ---------- */
+.chapter{margin-top:44px;border-top:none;padding-top:0}
+.chapter-head{background:var(--ink);color:#F1E7D8;padding:40px 34px;position:relative;overflow:hidden}
+.chapter-head::before{content:"";position:absolute;right:-40px;top:-60px;width:280px;height:280px;border:1px solid rgba(216,167,138,.22);border-radius:50%}
+.chapter-head::after{content:"";position:absolute;right:20px;bottom:-70px;width:200px;height:200px;border:1px solid rgba(216,167,138,.16);border-radius:50%}
+.chapter-head .ck{font-size:11.5px;letter-spacing:.28em;color:#D8A78A;text-transform:uppercase}
+.chapter-head h2{margin:14px 0 14px;font-family:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC",Georgia,serif;font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.chapter-head p{margin:0;max-width:44em;font-size:14.5px;color:#C9BDAC;line-height:1.85;position:relative}
+.chapter-head .cmeta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;position:relative}
+.chapter-head .cmeta span{font-size:12px;color:#E3C6AC;border:1px solid rgba(216,167,138,.4);padding:5px 12px;border-radius:99px}
+.chapter-body{background:#FBF7EF;border:1px solid var(--line);border-top:none;padding:8px 26px 30px}
+.chapter-body .subhead:first-child,.chapter-body .sub2:first-child{margin-top:24px}
+.chapter-body .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.chapter-body .grid.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:0 auto}
+
+/* ---------- cases ---------- */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:760px;margin:0 auto}
+.case{background:var(--card);border:1px solid var(--line);padding:9px;transition:.26s}
+.case:hover{border-color:var(--line2);box-shadow:0 12px 30px -18px rgba(70,50,30,.5)}
+.case ul{list-style:none;padding:13px 6px 6px;margin:0;font-size:14px;color:var(--ink2)}
+.case li{padding-left:16px;position:relative;margin-bottom:5px}
+.case li::before{content:"";position:absolute;left:0;top:.66em;width:6px;height:6px;background:#CDB99D}
+
+/* ---------- gallery ---------- */
+.gallery{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:flex-start}
+.gallery .card{width:calc((100% - 36px)/3);flex:none}
+.gallery .card{padding:7px;box-sizing:border-box}
+
+/* ---------- disclaimer ---------- */
+.disclaimer{margin-top:60px;background:#241F1B;color:#E9E0D3;padding:54px 0 38px;position:relative;z-index:2}
+.disclaimer .top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;border-bottom:1px solid rgba(233,224,211,.16);padding-bottom:18px}
+.disclaimer h2{font-size:24px;margin:0;font-weight:600;letter-spacing:.02em}
+.disclaimer .seal{font-size:11.5px;letter-spacing:.2em;color:#D8A78A;border:1px solid rgba(216,167,138,.42);padding:5px 12px;border-radius:2px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:26px 34px;margin-top:28px}
+.dgrid h4{margin:0 0 8px;font-size:14px;color:#E8C3A6;font-weight:600;letter-spacing:.04em}
+.dgrid p{margin:0;font-size:13.5px;line-height:1.85;color:#C6BCAE}
+.dfoot{margin-top:34px;padding-top:16px;border-top:1px solid rgba(233,224,211,.14);font-size:12px;color:#9C9287;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- lens ---------- */
+#lens{position:fixed;width:200px;height:200px;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 14px 34px rgba(30,20,10,.4);background-repeat:no-repeat;pointer-events:none;display:none;z-index:90}
+#lens.on{display:block}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;background:rgba(18,15,12,.95);z-index:120;display:none;flex-direction:column}
+.lb.on{display:flex}
+.lb-stage{flex:1;position:relative;overflow:hidden;cursor:grab;touch-action:none}
+.lb-stage.dragging{cursor:grabbing}
+.lb-img{position:absolute;left:50%;top:50%;transform-origin:center center;max-width:none;will-change:transform;user-select:none;-webkit-user-drag:none}
+.lb-bar{display:flex;align-items:center;gap:14px;padding:12px 20px;background:rgba(24,20,17,.92);border-top:1px solid rgba(233,224,211,.14);color:#E9E0D3;font-size:13px}
+.lb-cap{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#DCD2C4}
+.lb-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#F2EADD;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;line-height:1;transition:.2s;flex:none}
+.lb-btn:hover{background:rgba(255,255,255,.18)}
+.lb-btn.wide{width:auto;padding:0 14px;border-radius:99px;font-size:12.5px;letter-spacing:.04em}
+.lb-count{font-family:Georgia,serif;font-size:13px;color:#B8AC9C;letter-spacing:.08em;flex:none}
+.lb-close{position:absolute;right:16px;top:14px;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-close:hover{background:rgba(255,255,255,.2)}
+.lb-tip{position:absolute;left:18px;top:18px;z-index:2;font-size:12px;color:rgba(240,232,220,.62);letter-spacing:.04em}
+.navarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px}
+.navarrow:hover{background:rgba(255,255,255,.2)}
+.navarrow.prev{left:16px}.navarrow.next{right:16px}
+
+/* ---------- reveal ---------- */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:34px 0 26px}
+  .hero-fig{order:-1}
+  .cate{grid-template-columns:1fr}
+  .cate-r{border-left:none;border-top:1px dashed var(--line2)}
+  .feature{grid-template-columns:1fr;gap:16px}
+  .nav{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:14px}
+  .chapter-body .grid,.chapter-body .grid.two,.cases{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+  .feature{grid-template-columns:1fr;max-width:none}
+  .toc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery{gap:12px}
+  .gallery .card{width:calc((100% - 12px)/2)}
+  .mat{grid-template-columns:1fr;gap:14px}
+  .mat-imgs{grid-template-columns:1fr 1fr}
+  .mat.single .mat-imgs{grid-template-columns:1fr}
+  .sec-head{gap:12px}
+  .sec-num{min-width:38px;height:38px;font-size:14px}
+  .sub2{flex-wrap:wrap;gap:6px 12px;padding:11px 14px}
+  .sub2 .s2d{border-left:none;padding-left:0;flex-basis:100%}
+  .sub3{flex-wrap:wrap;gap:6px 9px}
+  .chapter-head{padding:28px 22px}
+  .chapter-body{padding:4px 16px 24px}
+  .section{padding:38px 0 6px;margin-top:22px}
+  .lb-tip{display:none}
+  figcaption{font-size:13px}
+  .disclaimer{padding:38px 0 28px}
+}
+@media (hover:none){ #lens{display:none!important} .mag{opacity:1;transform:none;width:26px;height:26px} }
+
+/* ---------- 原图对照拆解 ---------- */
+.cmp{display:grid;grid-template-columns:250px minmax(0,1fr);gap:0;align-items:start;margin-top:6px}
+.cmp-base{position:sticky;top:86px;padding-right:32px}
+.cmp-base .pb{background:var(--card);border:1px solid var(--line2);padding:9px;box-shadow:0 16px 34px -26px rgba(70,50,30,.55)}
+.cmp-base .pb .ph{aspect-ratio:3/4}
+.cmp-lbl{display:inline-block;margin:10px 0 0;font-size:11.5px;letter-spacing:.18em;color:var(--accent);border:1px solid #E3CBB9;background:#F9F0E7;padding:4px 10px;border-radius:99px}
+.cmp-base ul{list-style:none;margin:12px 0 0;padding:0;font-size:13px;color:var(--ink2)}
+.cmp-base li{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:5px 0;border-bottom:1px dotted var(--line)}
+.cmp-base li b{color:var(--muted);font-weight:500;font-size:12.5px}
+.cmp-note{margin-top:12px;font-size:11.5px;color:#9A9086;line-height:1.75}
+.cmp-rows{display:grid;gap:16px;border-left:1px dashed var(--line2);padding-left:38px}
+.cmp-row{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;background:var(--card);border:1px solid var(--line);padding:12px;transition:.26s}
+.cmp-row:hover{border-color:var(--line2);box-shadow:0 12px 30px -18px rgba(70,50,30,.45)}
+.cmp-row::before{content:"→";position:absolute;left:-31px;top:18px;font-size:14px;color:var(--accent);background:var(--paper);line-height:1;padding:2px 0}
+.chapter-body .cmp-row::before{background:#FBF7EF}
+.cmp-figs{display:grid;grid-template-columns:220px;gap:8px}
+.cmp-figs.two{grid-template-columns:186px 186px}
+.cmp-figs .ph{aspect-ratio:4/5}
+.cmp-txt{padding:4px 6px 4px 0}
+.cmp-n{font-family:Georgia,serif;font-size:11.5px;letter-spacing:.18em;color:var(--accent)}
+.cmp-txt h3{margin:6px 0 9px;font-size:16.5px;font-weight:600;letter-spacing:-.005em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cmp-txt h3 em{font-style:normal;font-size:11.5px;font-weight:400;color:#9A9086;letter-spacing:.06em}
+.cmp-lead{margin:0 0 13px;font-size:14px;color:var(--ink2)}
+.ks{display:grid;grid-template-columns:64px minmax(0,1fr);gap:7px 12px;margin:0;font-size:13.4px;color:var(--ink2);line-height:1.78}
+.ks dt{font-size:12px;color:var(--accent);white-space:nowrap;padding-top:2px}
+.ks dd{margin:0}
+@media (max-width:900px){
+  .cmp{grid-template-columns:1fr;gap:18px}
+  .cmp-base{position:static;padding-right:0}
+  .cmp-rows{border-left:none;padding-left:0}
+  .cmp-row{grid-template-columns:1fr;gap:14px}
+  .cmp-row::before{display:none}
+  .cmp-figs,.cmp-figs.two{grid-template-columns:1fr 1fr}
+  .cmp-base ul{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+}
+</style>
+</head>
+
+<style>
+.case-t{font-size:14.5px;font-weight:600;padding:11px 4px 2px;letter-spacing:.005em}
+.cases .ks{grid-template-columns:44px minmax(0,1fr);font-size:13px;padding:0 4px}
+.cases .case{padding:9px}
+.chapter-body .cases{max-width:920px}
+@media (max-width:900px){.cases .ks{grid-template-columns:44px minmax(0,1fr)}}
+</style>
+<body>
+
+<div class="notice">
+  <div class="inner">
+    <span>内部资料 · 仅供学习参考，<b>严禁外传</b></span>
+    <span>图片可点击放大，支持鼠标滚轮／放大镜查看细节</span>
+    <a href="#disclaimer">查看免责声明 ↓</a>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><i></i>亚麻长裤改款指南</div>
+    <nav class="nav">
+      <a href="#cate">类目</a>
+      <a href="#s1">腰部</a>
+      <a href="#s2">面料</a>
+      <a href="#s3">裤脚</a>
+      <a href="#s4">辅料</a>
+      <a href="#s5">设计</a>
+      <a href="#s6">背景</a>
+      <a href="#s7">开款方向</a>
+      <a href="#disclaimer" class="disc">免责声明</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Linen Trouser · 改款灵感手册</div>
+      <h1>亚麻长裤<br><span class="thin">改款指南</span></h1>
+      <p class="lead">以一条<strong>基础亚麻长裤</strong>为起点，从腰型、面料、裤脚、辅料、设计五个维度拆解可落地的改款思路。每一组都按「<strong>原图 → 改动后</strong>」对照呈现，并逐项写明改法、效果与量产时要注意的地方。</p>
+      <div class="chips">
+        <span class="chip">原图对照</span>
+        <span class="chip">逐项拆解</span>
+        <span class="chip">量产提示</span>
+      </div>
+      <div class="hint">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B8177" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5 21 21"></path></svg>
+        鼠标悬停出现放大镜，点击任意图片进入全屏，可滚轮／双击缩放
+      </div>
+    </div>
+    <div class="hero-fig">
+      <div class="frame">
+        <div class="ph" data-cap="基础款参考 · 亚麻阔腿长裤">
+          <img src="img/image1.jpg" alt="亚麻长裤基础款参考" loading="eager">
+          <span class="mag">＋</span>
+        </div>
+      </div>
+      <div class="tagline">基础款 · 参考</div>
+    </div>
+  </section>
+
+  <!-- 类目 -->
+  <section class="cate" id="cate">
+    <div>
+      <div class="cate-k">上架类目参考</div>
+      <p>亚麻、仿亚麻面料的，可以上胖达龙类目：</p>
+      <div class="cate-path">服装、鞋靴和珠宝饰品 <i>&gt;</i> 男士时尚 <i>&gt;</i> 男装 <i>&gt;</i> 男装长裤 <i>&gt;</i> 男士亚麻长裤</div>
+    </div>
+    <div class="cate-r">
+      <div class="cate-warn"><b>成分合规提醒</b><strong>实际面料是什么成分的，就必须要填什么成分；面料成分不含亚麻的一定不要写亚麻。最近稽查很多。</strong></div>
+      <p class="fine">仿亚麻面料也是可以上本类目的。</p>
+    </div>
+  </section>
+
+  <nav class="toc">
+    <a href="#s1"><span>01</span><b>腰部改款</b></a>
+    <a href="#s2"><span>02</span><b>面料改款</b></a>
+    <a href="#s3"><span>03</span><b>裤脚改款</b></a>
+    <a href="#s4"><span>04</span><b>其他辅料改款</b></a>
+    <a href="#s5"><span>05</span><b>设计改款</b></a>
+    <a href="#s6"><span>06</span><b>拍摄背景</b></a>
+    <a href="#s7"><span>07</span><b>开款方向</b></a>
+  </nav>
+
+  <section class="section" id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>腰部改款</h2><span class="badge">结构改造</span></div>
+    <p class="sec-desc">腰部是最容易形成差异化的位置：同一条裤型，换腰头结构就能拉开风格区间。左侧为原图，右侧为逐项改动后的样子。</p>
+    <div class="cmp">
+      <aside class="cmp-base">
+        <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
+        <div class="cmp-lbl">原图 · 基础款</div>
+        <ul><li><b>裤型</b><span>高腰直筒 / 阔腿，九分</span></li><li><b>腰头</b><span>常规腰头（松紧 / 抽绳）</span></li><li><b>脚口</b><span>平缝散口，窄折边</span></li><li><b>面料</b><span>平纹亚麻，无肌理</span></li><li><b>装饰</b><span>无辅料、无印花</span></li></ul>
+        <div class="cmp-note">小图内左侧黑色为改动款、右侧米白色为基础款，同一机位直接对照；右侧为逐项拆解。</div>
+      </aside>
+      <div class="cmp-rows">
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="橡筋腰 · 对照"><img src="img/image2.jpg" alt="橡筋腰 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ①</div>
+            <h3>橡筋腰 <em>抽绳松紧 / 舒适</em></h3>
+            <p class="cmp-lead">把整圈橡筋藏进加宽的腰头里，前面不再开门襟，抽绳从腰头穿出打结。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰头加宽到 3.5–4cm，内藏高弹包边橡筋，前中取消门襟与拉链；抽绳从两侧或前中孔位穿出，末端打结或加金属头。</dd><dt>效果</dt><dd>腰头收出均匀细褶，松紧可调、包容度高，坐着也不勒；短上衣、塞衣角都成立，是度假与休闲线的基础做法。</dd><dt>量产提示</dt><dd>臀围要放 2–3cm，否则坐下时腰头会被顶得下滑；橡筋选 3cm 以上高弹并加内衬带，防止翻卷和扭曲。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="西裤腰 · 对照"><img src="img/image3.jpg" alt="西裤腰 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ②</div>
+            <h3>西裤腰 <em>门襟纽扣 / 利落</em></h3>
+            <p class="cmp-lead">换成正规西裤结构：双层面腰头 + 腰里 + 门襟拉链 + 裤袢，把休闲感收掉。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰头做 4cm 双层面并加硬衬与腰里，前中加拉链门襟、锁眼钉扣，腰头均分 5–7 个裤袢，可保留后袋。</dd><dt>效果</dt><dd>线条干净挺括，可以配衬衫、西装外套，正式度和客单价一起上探，是通勤线的主力腰型。</dd><dt>量产提示</dt><dd>工序最多（门襟、腰里、锁眼、钉扣、套结），加工费明显高于橡筋腰；亚麻腰头必须加衬，不然洗两次就塌。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="特殊腰① · 对照"><img src="img/image4.jpg" alt="特殊腰① · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ③</div>
+            <h3>特殊腰 ① <em>系带 / 造型感</em></h3>
+            <p class="cmp-lead">腰头做加宽交叠，用同料长带在正前方绕一圈打结，把腰变成视觉中心。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰头加宽至 6–8cm 并做交叠，配宽 3–4cm 同料长带，可加金属环或木扣作为固定点。</dd><dt>效果</dt><dd>一条带子就完成了造型，是最省成本的“设计款”做法，适合内容款、形象款和拍摄款。</dd><dt>量产提示</dt><dd>打结方式要出图示，保证大货一致性；带长按腰围 ×1.5 计算，过长容易拖地、勾挂。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="特殊腰② · 对照"><img src="img/image5.jpg" alt="特殊腰② · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ④</div>
+            <h3>特殊腰 ② <em>系带 / 侧向变体</em></h3>
+            <p class="cmp-lead">同一思路的变体：一侧固定短带、一侧长带，改为侧向打结，或做成围裹式假门襟。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰头做单侧交叠 + 侧向系带；也可做成围裹式假门襟，用暗扣固定，外面看不到拉链。</dd><dt>效果</dt><dd>比正中打结更随意，侧面留出垂坠感，走动时带子有动态，比①更日常一些。</dd><dt>量产提示</dt><dd>暗扣位置要在人台上反复试，围裹重叠量不足会走光，建议内层再加一颗暗扣保险。</dd></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="callout"><span class="dot"></span><span>选型建议：橡筋腰做基础量、西裤腰做通勤线、系带特殊腰做形象款——三种腰型刚好覆盖三个价位带，是这一组最稳的组合。</span></div>
+  </section>
+  <section class="section" id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>面料改款</h2><span class="badge">换布为主</span></div>
+    <p class="sec-desc">同为亚麻，竹节、条纹组织、斜纹、大方格、细密颗粒带来的视觉厚度与肌理完全不同，是「看起来不一样」的关键。这一章只看面料：前三种附「成衣 + 布面特写」，先看上身效果，再看肌理。</p>
+    <div class="cmp">
+      <aside class="cmp-base">
+        <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
+        <div class="cmp-lbl">原图 · 基础款</div>
+        <ul><li><b>裤型</b><span>高腰直筒 / 阔腿，九分</span></li><li><b>腰头</b><span>常规腰头（松紧 / 抽绳）</span></li><li><b>脚口</b><span>平缝散口，窄折边</span></li><li><b>面料</b><span>平纹亚麻，无肌理</span></li><li><b>装饰</b><span>无辅料、无印花</span></li></ul>
+        <div class="cmp-note">小图内左侧黑色为改动款、右侧米白色为基础款，同一机位直接对照；右侧为逐项拆解。 前三种附「成衣 + 面料特写」。</div>
+      </aside>
+      <div class="cmp-rows">
+        <article class="cmp-row">
+          <div class="cmp-figs two"><div class="ph" data-cap="竹节亚麻 · 成衣"><img src="img/image9.jpg" alt="竹节亚麻 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div><div class="ph" data-cap="竹节亚麻 · 面料特写"><img src="img/image6.jpg" alt="竹节亚麻 · 面料特写" loading="lazy"><span class="pill">特写</span><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ①</div>
+            <h3>竹节亚麻 <em>不规则粗节纱</em></h3>
+            <p class="cmp-lead">用带竹节的亚麻纱织成的坯布，竹节的粗细与间距由纺织厂控制。</p>
+            <dl class="ks"><dt>改法</dt><dd>坯布换成竹节亚麻纱织造的版本，竹节粗细与间距由纱厂控制；克重可略提，配色走本白、米、黑等素色。</dd><dt>效果</dt><dd>天然手织感最强，布面有轻微起伏，能盖住亚麻本身的小皱，拍出来“有质感”最直接。</dd><dt>量产提示</dt><dd>竹节分布不均容易被验成次布，下单前要确认竹节密度样；不同缸号色差大，必须留样对色。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs two"><div class="ph" data-cap="条纹组织亚麻 · 成衣"><img src="img/image10.jpg" alt="条纹组织亚麻 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div><div class="ph" data-cap="条纹组织亚麻 · 面料特写"><img src="img/image7.jpg" alt="条纹组织亚麻 · 面料特写" loading="lazy"><span class="pill">特写</span><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ②</div>
+            <h3>条纹组织亚麻 <em>纵向条感 / 挺括</em></h3>
+            <p class="cmp-lead">靠组织而不是印花做条：经向浮长形成连续的竖条，条宽由穿综决定。</p>
+            <dl class="ks"><dt>改法</dt><dd>坯布换条纹组织，条宽控制在 0.3–1cm；要更挺可选克重更高的版本。</dd><dt>效果</dt><dd>视觉上把腿拉长，挺括度优于平纹，裤线更利落，适合直筒与阔腿基本款。</dd><dt>量产提示</dt><dd>条宽要和裤片宽度对齐，侧缝必须对条；裁剪注意丝缕方向，斜裁会让条子歪掉。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs two"><div class="ph" data-cap="斜纹亚麻 · 成衣"><img src="img/image10.jpg" alt="斜纹亚麻 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div><div class="ph" data-cap="斜纹亚麻 · 面料特写"><img src="img/image8.jpg" alt="斜纹亚麻 · 面料特写" loading="lazy"><span class="pill">特写</span><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ③</div>
+            <h3>斜纹亚麻 <em>斜向纹路 / 垂顺</em></h3>
+            <p class="cmp-lead">把平纹换成斜纹（人字 / 2-1 斜纹），布面出现斜向纹路，光泽与垂顺都更好。</p>
+            <dl class="ks"><dt>改法</dt><dd>坯布换斜纹组织（人字 / 2-1 斜纹），克重可略增；斜向纹路、光泽与垂顺都来自组织本身。</dd><dt>效果</dt><dd>斜纹带一点点光泽，垂顺度和挺括度同时提升，比平纹更像“西装裤”，通勤线适配度高。</dd><dt>量产提示</dt><dd>斜纹的吃势与回缩都与平纹不同，纸样要重新放缩；深色斜纹容易出极光，整烫温度要压住。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="大方格亚麻肌理 · 成衣"><img src="img/image11.jpg" alt="大方格亚麻肌理 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ④</div>
+            <h3>大方格亚麻肌理 <em>远看有格 / 织造肌理</em></h3>
+            <p class="cmp-lead">格是织出来的，不是印上去的：以组织交替形成 2–4cm 的大格。</p>
+            <dl class="ks"><dt>改法</dt><dd>坯布换格纹组织，格距 2–4cm；配色走本白 / 卡其等自然色系，配同色系上衣成套出。</dd><dt>效果</dt><dd>远看有格、近看是肌理，比印花格纹更有层次，能撑起整组度假主题。</dd><dt>量产提示</dt><dd>必须对格（前后片、侧缝、口袋），单件耗布会增加 15%–20%；格距越大，对格损耗越高。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="细密颗粒亚麻 · 成衣"><img src="img/image12.jpg" alt="细密颗粒亚麻 · 成衣" loading="lazy"><span class="pill">成衣</span><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ⑤</div>
+            <h3>细密颗粒亚麻肌理 <em>细密均匀 / 布面平整</em></h3>
+            <p class="cmp-lead">细旦纱 + 高密织造，颗粒细而均匀，是这一组里最“干净”的布面。</p>
+            <dl class="ks"><dt>改法</dt><dd>换细密颗粒坯布；适合做基础主推款，也适合当印花底布（布面平，印花更清楚）。</dd><dt>效果</dt><dd>平整、素净，做量最大的基本款最稳；同一版型换这个布面，退货率通常比粗肌理更低。</dd><dt>量产提示</dt><dd>布面越平瑕疵越显眼，验布标准要提高；做印花底布前先测缩水率，避免印花后变形。</dd></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="warn hot">
+      <div class="wicon">!</div>
+      <div>
+        <div class="wt">面料成分填写要求 · 必须执行</div>
+        <p><span class="hot">实际面料是什么成分的，就必须要填什么成分；面料成分不含亚麻的，一定不要写亚麻。</span>最近稽查很多，标题、属性、吊牌、详情页四处信息必须完全一致。</p>
+      </div>
+    </div>
+    <div class="callout"><span class="dot"></span><span>选型建议：细密颗粒打底做主推，竹节做度假，条纹与斜纹做通勤，大方格只在强度假主题里做点缀——五块布就能把一条基础裤拆成五条产品线。</span></div>
+  </section>
+  <section class="section" id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>裤脚改款</h2><span class="badge">脚口结构</span></div>
+    <p class="sec-desc">脚口决定裤型的「收」与「放」：束脚、分叉、微喇散口，对应三种不同的风格走向。同一个上身版型，只改脚口就能分出三个系列。</p>
+    <div class="cmp">
+      <aside class="cmp-base">
+        <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
+        <div class="cmp-lbl">原图 · 基础款</div>
+        <ul><li><b>裤型</b><span>高腰直筒 / 阔腿，九分</span></li><li><b>腰头</b><span>常规腰头（松紧 / 抽绳）</span></li><li><b>脚口</b><span>平缝散口，窄折边</span></li><li><b>面料</b><span>平纹亚麻，无肌理</span></li><li><b>装饰</b><span>无辅料、无印花</span></li></ul>
+        <div class="cmp-note">小图内左侧黑色为改动款、右侧米白色为基础款，同一机位直接对照；右侧为逐项拆解。</div>
+      </aside>
+      <div class="cmp-rows">
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="束脚 / 直筒 · 对照"><img src="img/image13.jpg" alt="束脚 / 直筒 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ①</div>
+            <h3>束脚 / 直筒 <em>收口利落</em></h3>
+            <p class="cmp-lead">在脚口穿一圈橡筋或加罗纹收口，把宽松的裤脚收在脚踝。</p>
+            <dl class="ks"><dt>改法</dt><dd>脚口折边 3–4cm 穿 1.5–2cm 窄橡筋，或加本布 / 罗纹束口圈；脚口围收到脚踝围 +4–6cm。</dd><dt>效果</dt><dd>量感收在脚踝，整条裤子偏运动休闲，能露出鞋型，配运动鞋、凉鞋都成立。</dd><dt>量产提示</dt><dd>收口后视觉变短，纸样要加长 2cm 打样确认；橡筋用窄幅更利落，宽橡筋会显笨。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="脚口分叉 · 对照"><img src="img/image15.jpg" alt="脚口分叉 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ②</div>
+            <h3>脚口分叉 <em>开衩细节</em></h3>
+            <p class="cmp-lead">在侧缝或前中开一道 8–12cm 的叉，让长裤也能有开合的动感。</p>
+            <dl class="ks"><dt>改法</dt><dd>侧缝或前中开叉 8–12cm，可做净叉、加暗扣或系带；里侧加贴边，避免看到毛边。</dd><dt>效果</dt><dd>走路时裤脚开合、露出鞋面，长裤不再拖沓，是轻正装线最省力的“细节感”。</dd><dt>量产提示</dt><dd>开叉止点必须打套结加固，否则一扯就裂；叉深超过 15cm 要加里襟，防止走光。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="微喇叭散口 · 对照"><img src="img/image14.jpg" alt="微喇叭散口 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ③</div>
+            <h3>微喇叭散口 <em>量感下摆</em></h3>
+            <p class="cmp-lead">膝围不动，只把脚口向外放 3–6cm，形成一点微喇。</p>
+            <dl class="ks"><dt>改法</dt><dd>脚口外放 3–6cm，下摆做 1.5cm 窄折边或密拷；腰臀不收，保持上紧下松的比例。</dd><dt>效果</dt><dd>量感压在下摆，复古、有垂坠，配厚底鞋或靴子最好看，也最显腿直。</dd><dt>量产提示</dt><dd>放量超过 6cm 会显拖沓、容易踩裤脚；下摆斜丝处挂晾定型，否则出波浪边。</dd></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="callout"><span class="dot"></span><span>选型建议：同一条裤型换脚口就能分出三个系列——束脚做运动、分叉做轻正装、微喇做复古，开发成本几乎只有纸样。</span></div>
+  </section>
+  <section class="section" id="s4">
+    <div class="sec-head"><span class="sec-num">04</span><h2>其他辅料改款</h2><span class="badge">小辅料大差异</span></div>
+    <p class="sec-desc">纽扣、飘带与麻绳、蕾丝边、流苏——小辅料成本低、工时可算，但能立刻把基础款做出设计感。以下四种可以单独用，也可以叠加。</p>
+    <div class="cmp">
+      <aside class="cmp-base">
+        <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
+        <div class="cmp-lbl">原图 · 基础款</div>
+        <ul><li><b>裤型</b><span>高腰直筒 / 阔腿，九分</span></li><li><b>腰头</b><span>常规腰头（松紧 / 抽绳）</span></li><li><b>脚口</b><span>平缝散口，窄折边</span></li><li><b>面料</b><span>平纹亚麻，无肌理</span></li><li><b>装饰</b><span>无辅料、无印花</span></li></ul>
+        <div class="cmp-note">小图内左侧黑色为改动款、右侧米白色为基础款，同一机位直接对照；右侧为逐项拆解。</div>
+      </aside>
+      <div class="cmp-rows">
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="侧面纽扣 · 对照"><img src="img/image16.jpg" alt="侧面纽扣 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ①</div>
+            <h3>侧面纽扣 <em>结构装饰</em></h3>
+            <p class="cmp-lead">在侧缝外侧加一条门襟条，钉一排装饰扣，侧面就多出一条纵向结构线。</p>
+            <dl class="ks"><dt>改法</dt><dd>侧缝外侧加 3–4cm 门襟条，钉 3–5 颗装饰扣（贝壳扣、木扣或包布扣），扣距按 8–10cm 均分。</dd><dt>效果</dt><dd>基础款立刻有“设计款”的观感，成本和工时都很低，是这一组里性价比最高的改动。</dd><dt>量产提示</dt><dd>装饰扣要过拉力测试，儿童线更严；最下一颗扣别落在胯部最宽处，否则会撑开显胖。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="飘带 / 麻绳 · 对照"><img src="img/image2.jpg" alt="飘带 / 麻绳 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ②</div>
+            <h3>飘带 / 麻绳 <em>垂坠灵动</em></h3>
+            <p class="cmp-lead">腰侧或侧缝穿孔，穿同料飘带或麻绳，末端可以加木珠、流苏或直接打结。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰侧打 2 个气眼，穿宽 1.5–3cm 的同料飘带或麻绳；末端加木珠、流苏，或收成散口自然毛边。</dd><dt>效果</dt><dd>垂下来的带子带来动感，是最省成本的波西米亚手法，拍摄时随风飘起来很出片。</dd><dt>量产提示</dt><dd>外露绳带长度要控制（按绳带安全要求），过长易勾挂；穿孔处必须打气眼，否则会脱纱。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="蕾丝边 · 对照"><img src="img/image19.jpg" alt="蕾丝边 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ③</div>
+            <h3>蕾丝边 <em>民族风镂空镶边</em></h3>
+            <p class="cmp-lead">在脚口或侧缝外贴一条民族风几何 / 卷草纹的钩编蕾丝织带，露出 1–2cm 的镂空花边。</p>
+            <dl class="ks"><dt>改法</dt><dd>选花纹为几何、卷草、锯齿这类民族纹样的钩编 / 镂空织带（宽 3–6cm），沿脚口或侧缝外侧压缝，露出 1–2cm；也可夹在折边里做暗藏式，只露一圈镂空边。</dd><dt>效果</dt><dd>用镂空的精细线条跟亚麻的粗粝形成对比，既保留民族风的手工感，又让男装长裤在脚口多一层细节，度假线、中性线都能用。</dd><dt>量产提示</dt><dd>蕾丝织带与亚麻缩水率不同，必须先缩水定型再上；选无弹或低弹织带，否则水洗后起波浪；花型优先几何 / 卷草，不要选柔美花卉型。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="流苏 · 对照"><img src="img/image17.jpg" alt="流苏 · 对照" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ④</div>
+            <h3>流苏 <em>波西米亚</em></h3>
+            <p class="cmp-lead">脚口或侧缝拼一条 5–10cm 的流苏，也可以把折边拆成手工抽纱流苏。</p>
+            <dl class="ks"><dt>改法</dt><dd>脚口或侧缝拼流苏条（长 5–10cm）；也可把脚口折边做抽纱，形成同料短流苏。</dd><dt>效果</dt><dd>走动时流苏摆动，民族 / 波西米亚氛围最直接，特别适合拍摄款和内容款。</dd><dt>量产提示</dt><dd>流苏易脱散、掉毛，根部要锁边或加织带压条；先做水洗测试，确认掉毛量可接受再上大货。</dd></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="feature">
+      <div class="ph" data-cap="我全都要 · 辅料组合款"><img src="img/image18.jpg" alt="辅料组合款" loading="lazy"><span class="mag">＋</span></div>
+      <div class="body">
+        <div class="kicker">COMBO</div>
+        <h3>我全都要</h3>
+        <p>把四种辅料叠在同一款上：腰部抽绳飘带、侧面纽扣门襟、侧缝蕾丝边、脚口流苏。它是系列里的形象款，用来定调整组风格，不指望跑量。</p>
+        <dl class="ks" style="margin-top:14px">
+          <dt>适合</dt><dd>拍摄款、内容款、店铺形象位</dd>
+          <dt>注意</dt><dd>辅料越多，验货点越多、过检风险越高，单款辅料建议不超过 3 类</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="callout"><span class="dot"></span><span>选型建议：先做单点辅料（纽扣或流苏）验证动销，再上组合款；辅料叠加会同时抬高做工成本与验货风险。</span></div>
+  </section>
+  <section class="section chapter" id="s5">
+    <div class="chapter-head">
+      <div class="ck">Chapter · 05</div>
+      <h2>设计改款</h2>
+      <p>纹样是最快建立风格的语言，也是这一季的重点。位置比图案更重要——长条、单个大印花、腰部点缀，三种落位对应三种视觉重心。往下依次是「印花位置」、「民族风设计元素」与「实拍案例」，它们都属于设计改款这一个大类，连续阅读即可。</p>
+      <div class="cmeta"><span>印花位置</span><span>民族风设计元素</span><span>实拍案例</span></div>
+    </div>
+    <div class="chapter-body">
+
+      <div class="sub2"><span class="s2n">一</span><span class="s2t">印花位置</span><span class="s2d">长条 · 单个大印花 · 腰部，三种落位对应三种视觉重心</span></div>
+      <p class="sec-desc" style="margin:0 0 18px">同一组图案，落在腰、落在腿侧、还是放大到单侧，出来的风格完全不同。三种落位都可以从原图上直接改，不用改版型。</p>
+    <div class="cmp">
+      <aside class="cmp-base">
+        <div class="pb"><div class="ph" data-cap="原图 · 基础款亚麻长裤"><img src="img/image1.jpg" alt="原图 · 基础款亚麻长裤" loading="lazy"><span class="mag">＋</span></div></div>
+        <div class="cmp-lbl">原图 · 基础款</div>
+        <ul><li><b>裤型</b><span>高腰直筒 / 阔腿，九分</span></li><li><b>腰头</b><span>常规腰头（松紧 / 抽绳）</span></li><li><b>脚口</b><span>平缝散口，窄折边</span></li><li><b>面料</b><span>平纹亚麻，无肌理</span></li><li><b>装饰</b><span>无辅料、无印花</span></li></ul>
+        <div class="cmp-note">小图内左侧黑色为改动款、右侧米白色为基础款，同一机位直接对照；右侧为逐项拆解。</div>
+      </aside>
+      <div class="cmp-rows">
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="侧面 / 正面长条印花"><img src="img/image22.jpg" alt="侧面 / 正面长条印花" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ①</div>
+            <h3>侧面 / 正面长条 <em>纵向延伸</em></h3>
+            <p class="cmp-lead">沿侧缝或前中做一条宽 6–10cm 的竖条，从腰一直走到脚口或小腿。</p>
+            <dl class="ks"><dt>改法</dt><dd>在纸样上定死条宽（6–10cm）与位置，单侧或双侧；图案在条内拉满，可做满版纹样也可做连续骨线。</dd><dt>效果</dt><dd>纵向延伸、腿显长；远看是一条色带，近看是纹样，兼顾“好搭”和“有风格”。</dd><dt>量产提示</dt><dd>条宽与位置必须固定在纸样上，裁片对花；深色底要先印白底浆，否则红绿发暗、色牢度也差。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="单个大印花"><img src="img/image20.jpg" alt="单个大印花" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ②</div>
+            <h3>单个大印花 <em>少做 · 只做形象款</em></h3>
+            <p class="cmp-lead"><span class="hot">少做：</span>一个完整的大图案压在单侧裤腿上，视觉冲击最强，但也最容易抢掉裤型、挑人挑搭配。</p>
+            <p class="cmp-alert">这一项不建议作为主力款：只用于形象款、拍摄款，款数与备货量都要压小，主力销量交给长条与腰部。</p>
+            <dl class="ks"><dt>改法</dt><dd>单侧裤腿放一个完整图案（多在膝下至脚口），建议用刺绣或贴布落地；图案自带边框，收口更干净。</dd><dt>效果</dt><dd>一张图就能撑起一个款，适合做形象款、拍摄款；但它不像长条那样好搭，所以只做少量精品、不做大货。</dd><dt>量产提示</dt><dd>定位对位难，裁片一偏图案就歪，返修率高；只做小批试产，确认定位与效果后再决定是否加单。</dd></dl>
+          </div>
+        </article>
+        <article class="cmp-row">
+          <div class="cmp-figs"><div class="ph" data-cap="腰部印花"><img src="img/image21.jpg" alt="腰部印花" loading="lazy"><span class="mag">＋</span></div></div>
+          <div class="cmp-txt">
+            <div class="cmp-n">改款 ③</div>
+            <h3>腰部印花 <em>聚焦腰线</em></h3>
+            <p class="cmp-lead">在腰头或腰下 10cm 内做一圈横向纹样带，把视线拉回腰线。</p>
+            <dl class="ks"><dt>改法</dt><dd>腰头或腰下 10cm 内做横向纹样带，可整圈也可只做前幅；腰头是双层结构，需在裁片上先印再缝合。</dd><dt>效果</dt><dd>视线集中在腰线，显腰细；塞不塞衣角都好看，是三种落位里最安全、最好卖的一种。</dd><dt>量产提示</dt><dd>缝份处图案要留余量，否则拼缝后纹样会断；腰头压烫后图案易发亮，温度要低。</dd></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+      <div class="callout"><span class="dot"></span><span>工艺建议：民族纹样优先用<b>刺绣</b>落地——<b>平绣</b>做面、<b>链式绣</b>勾骨线与涡卷、<b>贴布绣</b>做色块；线迹有厚度，质感更接近手工织物。腰头、脚口、侧缝等受力位置先加衬再绣，避免洗后起皱。</span></div>
+
+      <div class="sub2"><span class="s2n">二</span><span class="s2t">民族风设计元素</span><span class="s2d">纹样元素库：涡卷类 / 几何图形组合 / 花卉卷草</span></div>
+      <p class="sec-desc" style="margin:0 0 18px">这一类是设计改款里的重点。纹样可以拆成三组语言：<strong>几何图形组合</strong>搭骨架、<strong>涡卷线</strong>做过渡、<strong>花卉卷草</strong>做填充。颜色统一走红、黑、绿等鲜艳色，远看辨识度最高。</p>
+
+      <div class="sub3"><i></i><b>涡卷类</b><em>柔软流动，做过渡与点缀</em></div>
+      <div class="grid two">
+        <figure class="card">
+          <div class="ph" data-cap="涡卷线"><img src="img/image23.jpg" alt="涡卷线" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>涡卷线 <em>连续回旋</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="佩斯利涡卷（小水滴）"><img src="img/image24.jpg" alt="佩斯利涡卷（小水滴）" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>佩斯利涡卷 <em>小水滴形</em></figcaption>
+        </figure>
+      </div>
+      <div class="sub3"><i></i><b>几何图形组合</b><em>秩序感强，用来搭骨架</em></div>
+      <div class="grid">
+        <figure class="card">
+          <div class="ph" data-cap="阶梯纹"><img src="img/image25.jpg" alt="阶梯纹" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>阶梯纹 <em>层叠递进</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="锯齿折线"><img src="img/image26.jpg" alt="锯齿折线" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>锯齿折线 <em>节奏锐利</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="小方块小菱形"><img src="img/image27.jpg" alt="小方块小菱形" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>小方块小菱形 <em>散点排列</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="连续结饰（回环交织）"><img src="img/image28.jpg" alt="连续结饰（回环交织）" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>连续结饰 <em>回环交织</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="三角形"><img src="img/image34.jpg" alt="三角形" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>三角形 <em>尖角排列</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="线条 + 菱形组合"><img src="img/image32.jpg" alt="线条 + 菱形组合" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>线条 + 菱形组合</figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="圆形、线条、三角形、正方形、菱形自由组合"><img src="img/image31.jpg" alt="圆形、线条、三角形、正方形、菱形自由组合" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>自由组合 <em>圆 / 线 / 三角 / 方 / 菱</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="十字 / 星型"><img src="img/image35.jpg" alt="十字 / 星型" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>十字 / 星型 <em>对称点缀</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="几何花瓣（菱形）"><img src="img/image33.jpg" alt="几何花瓣（菱形）" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>几何花瓣 <em>菱形化处理</em></figcaption>
+        </figure>
+      </div>
+      <div class="sub3"><i></i><b>花卉卷草</b><em>枝叶蔓延，做填充与过渡</em></div>
+      <p class="sec-desc" style="margin:0 0 18px">花卉卷草提供柔和的过渡线条，几何组合负责画面骨架，两者混排最接近真实的民族风织物——纯几何会太硬，纯花卉又容易变“花布”。</p>
+      <div class="grid two">
+        <figure class="card">
+          <div class="ph" data-cap="花卉卷草"><img src="img/image30.jpg" alt="花卉卷草" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>花卉卷草 <em>枝叶蔓延</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="花卉卷草"><img src="img/image29.jpg" alt="花卉卷草" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>花卉卷草 <em>满版分布</em></figcaption>
+        </figure>
+      </div>
+      <div class="callout"><span class="dot"></span><span>怎么用：先画一条主骨线（折线 / 菱形外框）确定走向，再用小菱形、十字、星型做散点填充，最后用涡卷和卷草把空隙补起来；一件单品控制在 <b>2–3 种主色</b>，红 + 黑 + 米白最稳。</span></div>
+
+      <div class="sub2"><span class="s2n">三</span><span class="s2t">实拍案例</span><span class="s2d">元素在成衣上的组合、收边与配色</span></div>
+      <p class="sec-desc" style="margin:0 0 18px">把上面拆解的元素放回成衣上：看它们如何组合、如何收边、如何配色。以下四个案例都是从元素库里挑出来的实际落地。</p>
+      <div class="cases">
+        <div class="case">
+          <div class="ph" data-cap="案例一 · 腰部锯齿折线 / 大菱形外框"><img src="img/image36.jpg" alt="案例一 · 腰部锯齿折线 / 大菱形外框" loading="lazy"><span class="mag">＋</span></div>
+          <div class="case-t">案例一 · 腰部横向带</div>
+          <dl class="ks"><dt>位置</dt><dd>腰头与腰下横向带</dd><dt>元素</dt><dd>锯齿折线、不规则线条组合、大菱形（外框）</dd><dt>配色</dt><dd>红 + 黑 为主，米白作底</dd><dt>要点</dt><dd>菱形外框定骨架，框内线条故意做不规则，避免太规整</dd></dl>
+        </div>
+        <div class="case">
+          <div class="ph fit" data-cap="案例二 · 脚口花卉卷草镶边"><img src="img/image37.jpg" alt="案例二 · 脚口花卉卷草镶边" loading="lazy"><span class="mag">＋</span></div>
+          <div class="case-t">案例二 · 脚口花卉卷草</div>
+          <dl class="ks"><dt>位置</dt><dd>只在脚口做一圈横向纹样带，裤腿保持干净</dd><dt>元素</dt><dd>花卉卷草、几何化花瓣 / 菱形</dd><dt>收边</dt><dd>脚口波浪 / 锯齿锁边收口</dd><dt>配色</dt><dd>米白底 + 蓝 / 红 / 绿多色绣线</dd><dt>要点</dt><dd>卷草沿脚口横向连续走一圈，宽度不要超过脚口以上 10cm；不做大面满版，避免花乱、也省工时</dd></dl>
+        </div>
+        <div class="case">
+          <div class="ph" data-cap="案例三 · 连续结饰 / 涡卷线"><img src="img/image38.jpg" alt="案例三 · 连续结饰 / 涡卷线" loading="lazy"><span class="mag">＋</span></div>
+          <div class="case-t">案例三 · 连续结饰满版</div>
+          <dl class="ks"><dt>元素</dt><dd>连续结饰（回环交织）、涡卷线</dd><dt>收边</dt><dd>平行细线边框，压住满版纹样</dd><dt>配色</dt><dd>红黑为主，局部留白</dd><dt>要点</dt><dd>满版纹样一定要加细线边框，否则裤脚处会“散”掉</dd></dl>
+        </div>
+        <div class="case">
+          <div class="ph" data-cap="案例四 · 锯齿折线 / 小菱形"><img src="img/image39.jpg" alt="案例四 · 锯齿折线 / 小菱形" loading="lazy"><span class="mag">＋</span></div>
+          <div class="case-t">案例四 · 折线 + 小菱形</div>
+          <dl class="ks"><dt>元素</dt><dd>锯齿折线、小菱形</dd><dt>收边</dt><dd>平行细线边框</dd><dt>配色</dt><dd>红 / 黑 / 绿三色混排</dd><dt>要点</dt><dd>小菱形做散点填充，密度不要均匀，才有手绘感</dd></dl>
+        </div>
+      </div>
+      <div class="callout"><span class="dot"></span><span>纹样用色：<b>红、黑、绿</b>，以鲜艳色为主，提升远看辨识度。</span></div>
+    </div>
+  </section>
+  <section class="section" id="s6">
+    <div class="sec-head"><span class="sec-num">06</span><h2>亚麻通用背景</h2><span class="badge">拍摄参考</span></div>
+    <p class="sec-desc">亚麻的天然质感适合自然场景：沙滩、公路、陶罐与卡其墙面、森林木屋，都能把面料的粗粝感拍出来。同一款裤子换背景，就换了一种定价想象。</p>
+      <div class="grid">
+        <figure class="card">
+          <div class="ph" data-cap="海边沙滩"><img src="img/image42.jpg" alt="海边沙滩" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>海边沙滩 <em>高亮 · 度假</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="沙漠公路"><img src="img/image41.jpg" alt="沙漠公路" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>沙漠公路 <em>大景 · 宽阔</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="瓦罐花盆 + 卡其色墙漆"><img src="img/image43.jpg" alt="瓦罐花盆 + 卡其色墙漆" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>瓦罐花盆 + 卡其色墙漆 <em>室内 · 质感</em></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="ph" data-cap="森林 + 小木屋"><img src="img/image40.jpg" alt="森林 + 小木屋" loading="lazy"><span class="mag">＋</span></div>
+          <figcaption>森林 + 小木屋 <em>深绿 · 自然</em></figcaption>
+        </figure>
+      </div>
+  </section>
+  <section class="section" id="s7">
+    <div class="sec-head"><span class="sec-num">07</span><h2>亚麻长裤开款方向</h2><span class="badge">款式合辑</span></div>
+    <p class="sec-desc">以下为可参考的款式合辑，按版型与细节混排，包含腰型、裤脚、辅料与设计的各种组合结果。点击任意图片可放大查看版型、细节与搭配。</p>
+    <div class="gallery">
+      <div class="card"><div class="ph" data-cap="开款参考 01 / 34"><img src="img/image55.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 02 / 34"><img src="img/image50.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 03 / 34"><img src="img/image45.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 04 / 34"><img src="img/image48.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 05 / 34"><img src="img/image56.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 06 / 34"><img src="img/image53.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 07 / 34"><img src="img/image57.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 08 / 34"><img src="img/image47.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 09 / 34"><img src="img/image46.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 10 / 34"><img src="img/image49.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 11 / 34"><img src="img/image44.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 12 / 34"><img src="img/image51.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 13 / 34"><img src="img/image52.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 14 / 34"><img src="img/image54.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 15 / 34"><img src="img/image60.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 16 / 34"><img src="img/image61.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 17 / 34"><img src="img/image65.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 18 / 34"><img src="img/image64.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 19 / 34"><img src="img/image66.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 20 / 34"><img src="img/image59.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 21 / 34"><img src="img/image62.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 22 / 34"><img src="img/image63.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 23 / 34"><img src="img/image58.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 24 / 34"><img src="img/image72.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 25 / 34"><img src="img/image69.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 26 / 34"><img src="img/image74.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 27 / 34"><img src="img/image71.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 28 / 34"><img src="img/image73.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 29 / 34"><img src="img/image77.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 30 / 34"><img src="img/image75.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 31 / 34"><img src="img/image76.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 32 / 34"><img src="img/image67.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 33 / 34"><img src="img/image68.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+      <div class="card"><div class="ph" data-cap="开款参考 34 / 34"><img src="img/image70.jpg" alt="开款参考" loading="lazy"><span class="mag">＋</span></div></div>
+    </div>
+    <div class="callout"><span class="dot"></span><span>用法：先按版型挑出 3–5 个骨架款，再把前面几章的腰型、脚口、辅料、设计套上去组合，一般能拆出十几条不撞款的产品线。</span></div>
+  </section>
+
+</div>
+<!-- DISCLAIMER -->
+<section class="disclaimer" id="disclaimer">
+  <div class="wrap">
+    <div class="top">
+      <h2>免责声明</h2>
+      <span class="seal">内部资料 · 严禁外传</span>
+    </div>
+    <div class="dgrid">
+      <div>
+        <h4>使用范围</h4>
+        <p>本资料为个人经验分享，仅供内部学习与参考，严禁外传。</p>
+      </div>
+      <div>
+        <h4>知识产权</h4>
+        <p>文中涉及的所有商品设计、外观、功能、品牌 Logo 及图案等，其知识产权均归原合法权利人所有，此处仅作行业热款与趋势分析参考，请安全开发款式。</p>
+      </div>
+      <div>
+        <h4>侵权提示</h4>
+        <p>请勿直接套用、抄袭相关设计或未经授权使用他人 Logo。如需使用，请自行联系权利人获取授权。若因侵权引发法律纠纷，责任由使用者自行承担。</p>
+      </div>
+      <div>
+        <h4>免责条款</h4>
+        <p>本资料仅供方向性参考，编者不对因使用本资料内容所产生的任何后果承担法律责任。</p>
+      </div>
+    </div>
+    <div class="dfoot">
+      <span>亚麻长裤改款指南 · 内部学习材料</span>
+      <span>请勿用于任何外部传播或商业转载</span>
+    </div>
+  </div>
+</section>
+
+
+<div id="lens"></div>
+
+<div class="lb" id="lb">
+  <div class="lb-tip">滚轮缩放 · 拖动平移 · 双击复位</div>
+  <div class="lb-close" id="lbClose">×</div>
+  <div class="lb-stage" id="lbStage">
+    <img class="lb-img" id="lbImg" alt="">
+    <div class="navarrow prev" id="lbPrev">‹</div>
+    <div class="navarrow next" id="lbNext">›</div>
+  </div>
+  <div class="lb-bar">
+    <span class="lb-count" id="lbCount">1 / 1</span>
+    <span class="lb-cap" id="lbCap"></span>
+    <div class="lb-btn" id="lbOut" title="缩小">−</div>
+    <div class="lb-btn wide" id="lbReset">复位</div>
+    <div class="lb-btn" id="lbIn" title="放大">+</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  document.documentElement.className += ' js';
+  var canHover = window.matchMedia('(hover:hover) and (pointer:fine)').matches || (navigator.maxTouchPoints===0 && !('ontouchstart' in window));
+  var lens = document.getElementById('lens');
+
+  /* ---------- magnifier lens ---------- */
+  if(canHover){
+    var LENS=200, ZOOM=2.6;
+    document.addEventListener('mousemove', function(e){
+      var ph = e.target.closest ? e.target.closest('.ph') : null;
+      var img = ph ? ph.querySelector('img') : null;
+      if(!img || !img.naturalWidth){
+        lens.classList.remove('on'); return;
+      }
+      var r = img.getBoundingClientRect();
+      if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom){
+        lens.classList.remove('on'); return;
+      }
+      /* 按 object-fit 实际渲染尺寸换算，cover / contain 均准确 */
+      var nw=img.naturalWidth, nh=img.naturalHeight;
+      var sc=Math.max(r.width/nw, r.height/nh);
+      var rw=nw*sc, rh=nh*sc;
+      var offX=(r.width-rw)/2, offY=(r.height-rh)/2;
+      var bw=rw*ZOOM, bh=rh*ZOOM;
+      var px=(e.clientX-r.left-offX)/rw*100;
+      var py=(e.clientY-r.top-offY)/rh*100;
+      lens.style.backgroundImage='url("'+(img.currentSrc||img.src)+'")';
+      lens.style.backgroundSize=bw+'px '+bh+'px';
+      lens.style.backgroundPosition=(LENS/2 - px/100*bw)+'px '+(LENS/2 - py/100*bh)+'px';
+      lens.style.left=(e.clientX - LENS/2)+'px';
+      lens.style.top =(e.clientY - LENS/2)+'px';
+      lens.classList.add('on');
+    }, {passive:true});
+    document.addEventListener('mouseleave', function(){ lens.classList.remove('on'); });
+  }
+
+  /* ---------- lightbox ---------- */
+  var items = [].map.call(document.querySelectorAll('.ph'), function(ph){
+    var img = ph.querySelector('img');
+    return {src: img.getAttribute('src'), cap: ph.getAttribute('data-cap')||''};
+  });
+  var lb=document.getElementById('lb'), stage=document.getElementById('lbStage'),
+      lbImg=document.getElementById('lbImg'), capEl=document.getElementById('lbCap'),
+      cntEl=document.getElementById('lbCount'), idx=0, s=1, tx=0, ty=0;
+
+  function apply(){
+    lbImg.style.transform='translate(-50%,-50%) translate('+tx+'px,'+ty+'px) scale('+s+')';
+    stage.style.cursor = s>1 ? 'grab' : 'default';
+  }
+  function fit(){
+    s=1; tx=0; ty=0;
+    lbImg.style.maxWidth='92vw'; lbImg.style.maxHeight='calc(100vh - 130px)';
+    apply();
+  }
+  function show(i){
+    idx=(i+items.length)%items.length;
+    lbImg.src=items[idx].src;
+    capEl.textContent=items[idx].cap;
+    cntEl.textContent=(idx+1)+' / '+items.length;
+    fit();
+  }
+  function open(i){ show(i); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+  function close(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('.ph').forEach(function(ph,i){
+    ph.addEventListener('click', function(e){ e.preventDefault(); open(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
+
+  function zoomAt(f, cx, cy){
+    var ns=Math.min(6, Math.max(1, s*f));
+    var rect=stage.getBoundingClientRect();
+    var px=cx-rect.left-rect.width/2, py=cy-rect.top-rect.height/2;
+    var k=ns/s;
+    tx = px - k*(px - tx);
+    ty = py - k*(py - ty);
+    s = ns;
+    if(s===1){ tx=0; ty=0; }
+    apply();
+  }
+  document.getElementById('lbIn').addEventListener('click', function(){ var r=stage.getBoundingClientRect(); zoomAt(1.4, r.left+r.width/2, r.top+r.height/2); });
+  document.getElementById('lbOut').addEventListener('click', function(){ var r=stage.getBoundingClientRect(); zoomAt(1/1.4, r.left+r.width/2, r.top+r.height/2); });
+  document.getElementById('lbReset').addEventListener('click', fit);
+
+  stage.addEventListener('wheel', function(e){
+    e.preventDefault();
+    zoomAt(e.deltaY<0?1.18:1/1.18, e.clientX, e.clientY);
+  }, {passive:false});
+
+  stage.addEventListener('dblclick', function(e){
+    if(s>1){ fit(); } else { zoomAt(2.2, e.clientX, e.clientY); }
+  });
+
+  var drag=false, sx=0, sy=0, ox=0, oy=0;
+  stage.addEventListener('pointerdown', function(e){
+    if(s<=1) return;
+    drag=true; sx=e.clientX; sy=e.clientY; ox=tx; oy=ty;
+    stage.classList.add('dragging'); stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', function(e){
+    if(!drag) return;
+    tx=ox+(e.clientX-sx); ty=oy+(e.clientY-sy); apply();
+  });
+  stage.addEventListener('pointerup', function(){ drag=false; stage.classList.remove('dragging'); });
+
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('on')) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowLeft') show(idx-1);
+    if(e.key==='ArrowRight') show(idx+1);
+    if(e.key==='+'||e.key==='=') { var r=stage.getBoundingClientRect(); zoomAt(1.3, r.left+r.width/2, r.top+r.height/2); }
+    if(e.key==='-') { var r2=stage.getBoundingClientRect(); zoomAt(1/1.3, r2.left+r2.width/2, r2.top+r2.height/2); }
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    document.querySelectorAll('.card,.case,.mat,.feature,.callout,.warn,.sec-head,.chapter-head,.cmp-row').forEach(function(el){ el.classList.add('rv'); io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
